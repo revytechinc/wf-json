@@ -1,6 +1,6 @@
 project('wf-json', ['cpp'],
 		    version : '0.0',
-		    meson_version: '>=0.47.0',
+		    meson_version: '>=0.55.0',
 		    default_options : ['cpp_std=c++17'])
 
 json = dependency('yyjson', required: false)
