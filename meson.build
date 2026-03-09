@@ -14,8 +14,10 @@ endif
 
 wf_json_inc_dirs = include_directories('.')
 
-install_subdir('wayfire',
-    install_dir: get_option('includedir'))
+if get_option('install_header') == true
+    install_subdir('wayfire',
+        install_dir: get_option('includedir'))
+endif
 
 wfjson_lib = static_library('wfjson', ['src/json.cpp'], install: false, dependencies: json)
 wfjson = declare_dependency(link_with: wfjson_lib, include_directories: wf_json_inc_dirs, dependencies: json)
